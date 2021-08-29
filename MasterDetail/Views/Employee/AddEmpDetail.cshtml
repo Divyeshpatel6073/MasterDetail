@@ -1,0 +1,140 @@
+﻿@model tblEmpMst
+@*@model List<tblEmpDetail>*@
+
+<div class="row">
+    <div class="col-md-12">
+        @*<form id="frmDetails">*@
+        <table class="table table-bordered" id="detailsTable">
+            <thead>
+                <tr>
+                    <th>Emp Address</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @*@foreach (var item in Model.objtblEmpDetailList)*@
+                @for (int i = 0; i < Model.objtblEmpDetailList.Count(); i++)
+                {
+                    var item = Model.objtblEmpDetailList[i];
+                    <tr>
+                        
+                        <td>
+                            @Html.Hidden("objtblEmpDetailList[" + i + "].EmpDetId", Model.objtblEmpDetailList[i].EmpDetId, new { @class = "clsEmpDetId" })
+                            @Html.Hidden("objtblEmpDetailList[" + i + "].RefEmpMstid", Model.objtblEmpDetailList[i].RefEmpMstid, new { @class = "clsRefEmpMstid" })
+                            @Html.TextBox("objtblEmpDetailList[" + i + "].EmpAddress", Model.objtblEmpDetailList[i].EmpAddress, new { @class = "form-control clsEmpAdd" })
+                        </td>
+                        <td>
+                            <a href="javascript:void(0);" class="btn btn-info btn-sm" onclick="funDeleteEmpDetial(@item.EmpDetId)">Delete</a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="" colspan="2">
+                        <a href="javascript:void(0);" class="btn btn-info btn-sm" onclick="funAddEmpDetail()">Add EmpDetail</a>
+                        @*<button class="btn btn-info btn-sm" type="submit">Add EmpDetail</button>*@
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        @*</form>*@
+    </div>
+</div>
+<script type="text/javascript">
+    function funAddEmpDetail() {
+
+
+
+        @*$.ajax({
+            url: '@Url.Action("GetEmpDetil", "Employee")',
+            //data: {
+            //    paramtblEmpMst : dto
+            //},
+            //data: JSON.stringify({ paramtblEmpMst: dto }),
+            data: frm.serialize(),
+                dataType: "html",
+                type: "POST",
+                //contentType: "application/json; charset=utf-8",
+                async: true,
+                beforeSend: function () {
+
+                },
+                success: function (responce) {
+                    $("#divEmpDetail").html("");
+                    $("#divEmpDetail").html(responce);
+
+                },
+                error: function (xhr) {
+
+                },
+                complete: function () {
+
+                }
+            });*@
+
+        var orderArr = [];
+        orderArr.length = 0;
+        
+        $.each($("#detailsTable tbody tr"), function () {
+            orderArr.push({
+                EmpDetId: $(this).find('td:eq(0)').find('.clsEmpDetId').val(),
+                RefEmpMstid: $(this).find('td:eq(0)').find('.clsRefEmpMstid').val(),
+                EmpAddress: $(this).find('td:eq(0)').find('.clsEmpAdd').val(),
+            });
+        });
+        var _obj = {
+            objtblEmpDetailList: orderArr
+        }
+        $.ajax({
+            url: '@Url.Action("GetEmpDetil", "Employee")',
+            //data: $("#frmDetails").serialize(),
+            data: JSON.stringify({ paramtblEmpMst: _obj }),
+            contentType: "application/json",
+            type: 'POST',
+            dataType: 'html',
+            success: function (responce) {
+                $("#divEmpDetail").html("");
+                $("#divEmpDetail").html(responce);
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+        });
+    }
+
+    function funDeleteEmpDetial(_pkid) {
+        if (_pkid > 0) {
+            var orderArr = [];
+            orderArr.length = 0;
+
+            $.each($("#detailsTable tbody tr"), function () {
+                orderArr.push({
+                    EmpDetId: $(this).find('td:eq(0)').find('.clsEmpDetId').val(),
+                    RefEmpMstid: $(this).find('td:eq(0)').find('.clsRefEmpMstid').val(),
+                    EmpAddress: $(this).find('td:eq(0)').find('.clsEmpAdd').val(),
+                });
+            });
+            var _obj = {
+                objtblEmpDetailList: orderArr
+            }
+            $.ajax({
+            url: '@Url.Action("DeleteEmpDetil", "Employee")',
+            //data: $("#frmDetails").serialize(),
+                data: JSON.stringify({ paramEmpDetailid: _pkid, paramtblEmpMst: _obj }),
+            contentType: "application/json",
+            type: 'POST',
+                dataType: 'html',
+            success: function (responce) {
+                $("#divEmpDetail").html("");
+                $("#divEmpDetail").html(responce);
+            },
+                error: function (request, status, error) {
+                    debugger
+                alert(request.responseText);
+            }
+        });
+        }
+    }
+</script>

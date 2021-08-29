@@ -1,0 +1,6 @@
+C:\Users\Divye\source\repos\MasterDetail\MasterDetail.Model\bin\Debug\MasterDetail.Model.dll
+C:\Users\Divye\source\repos\MasterDetail\MasterDetail.Model\bin\Debug\MasterDetail.Model.pdb
+C:\Users\Divye\source\repos\MasterDetail\MasterDetail.Model\obj\Debug\MasterDetail.Model.csproj.AssemblyReference.cache
+C:\Users\Divye\source\repos\MasterDetail\MasterDetail.Model\obj\Debug\MasterDetail.Model.csproj.CoreCompileInputs.cache
+C:\Users\Divye\source\repos\MasterDetail\MasterDetail.Model\obj\Debug\MasterDetail.Model.dll
+C:\Users\Divye\source\repos\MasterDetail\MasterDetail.Model\obj\Debug\MasterDetail.Model.pdb

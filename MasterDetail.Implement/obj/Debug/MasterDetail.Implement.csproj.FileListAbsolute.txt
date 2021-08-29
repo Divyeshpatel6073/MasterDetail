@@ -1,0 +1,14 @@
+C:\Users\Divye\source\repos\MasterDetail\MasterDetail.Implement\bin\Debug\MasterDetail.Implement.dll.config
+C:\Users\Divye\source\repos\MasterDetail\MasterDetail.Implement\bin\Debug\MasterDetail.Implement.dll
+C:\Users\Divye\source\repos\MasterDetail\MasterDetail.Implement\bin\Debug\MasterDetail.Implement.pdb
+C:\Users\Divye\source\repos\MasterDetail\MasterDetail.Implement\bin\Debug\EntityFramework.dll
+C:\Users\Divye\source\repos\MasterDetail\MasterDetail.Implement\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Divye\source\repos\MasterDetail\MasterDetail.Implement\bin\Debug\MasterDetail.Model.dll
+C:\Users\Divye\source\repos\MasterDetail\MasterDetail.Implement\bin\Debug\MasterDetail.Model.pdb
+C:\Users\Divye\source\repos\MasterDetail\MasterDetail.Implement\bin\Debug\EntityFramework.xml
+C:\Users\Divye\source\repos\MasterDetail\MasterDetail.Implement\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Divye\source\repos\MasterDetail\MasterDetail.Implement\obj\Debug\MasterDetail.Implement.csproj.AssemblyReference.cache
+C:\Users\Divye\source\repos\MasterDetail\MasterDetail.Implement\obj\Debug\MasterDetail.Implement.csproj.CoreCompileInputs.cache
+C:\Users\Divye\source\repos\MasterDetail\MasterDetail.Implement\obj\Debug\MasterDetail.Implement.csproj.CopyComplete
+C:\Users\Divye\source\repos\MasterDetail\MasterDetail.Implement\obj\Debug\MasterDetail.Implement.dll
+C:\Users\Divye\source\repos\MasterDetail\MasterDetail.Implement\obj\Debug\MasterDetail.Implement.pdb

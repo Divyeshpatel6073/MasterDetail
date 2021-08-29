@@ -1,0 +1,60 @@
+﻿@model IEnumerable<tblEmpMst>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        @Html.ActionLink("Add", "AddEmp", "Employee", new { paramEmpid = 0 }, new { @class = "btn btn-info" })
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Emp Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.EmpName
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "AddEmp", "Employee",new { paramEmpid = item.EmpMstId },new { @class = "btn btn-info btn-sm" })
+                            <a href="javascript:void(0);" class="btn btn-info btn-sm" onclick="funDeleteEmp(@item.EmpMstId)">Delete</a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    function funEditEmp(_pkId) {
+        $.ajax({
+            url: '@Url.Action("AddEmp", "Employee")',
+            type: "POST",
+            dataType: "json",
+            contentType: false, // Not to set any content header
+            processData: false, // Not to process data
+            data: _fileData,
+            success: function (responce) {
+                
+            }
+        });
+    }
+
+    function funDeleteEmp(_pkId) {
+        if (_pkId > 0) {
+
+        }
+    }
+</script>
